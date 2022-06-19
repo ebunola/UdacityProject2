@@ -9,9 +9,6 @@ Parameters:
     AMImage:
         Description: AMI to use for our base image
         Type: String
-    KeyName:
-        Description: Keyname to use for ssh access
-        Type: String
 
 Resources:
   LBSecGroup:
@@ -66,7 +63,7 @@ Resources:
           echo "Udacity Demo Web Server Up and Running!" > index.html          
       
       ImageId: !Ref AMImage
-      KeyName: !Ref KeyName
+      
       SecurityGroups:
       - Ref: WebServerSecGroup
       InstanceType: t3.medium
